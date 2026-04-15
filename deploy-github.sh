@@ -9,7 +9,7 @@ fi
 
 # 设置 GitHub 仓库信息
 GITHUB_USERNAME="dvlo"
-REPO_NAME="DccX"
+REPO_NAME="dccx.github.io"
 
 # 检查是否已经连接到远程仓库
 if ! git remote | grep -q origin; then

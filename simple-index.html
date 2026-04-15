@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DccX Programming Language</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">DccX</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">首页</a>
+            <a href="documentation.html">文档</a>
+            <a href="examples.html">示例</a>
+            <a href="download.html">下载</a>
+            <a href="help.html">帮助</a>
+        </div>
+    </nav>
+
+    <!-- 主页 -->
+    <div class="container">
+        <section class="hero">
+            <h1>DccX 编程语言</h1>
+            <p>融合 Shell、C 和 C++ 的革命性编程语言</p>
+            <div class="buttons">
+                <button class="btn">立即下载</button>
+                <button class="btn-secondary">查看示例</button>
+            </div>
+        </section>
+        
+        <section class="features-grid">
+            <div class="card">
+                <h2>Shell 集成</h2>
+                <p>直接在代码中执行系统命令，无缝整合 Shell 脚本功能。</p>
+            </div>
+            <div class="card">
+                <h2>C 语言性能</h2>
+                <p>继承 C 语言的底层性能和内存管理能力，高效运行。</p>
+            </div>
+            <div class="card">
+                <h2>C++ 特性</h2>
+                <p>支持面向对象、模板、异常处理等高级编程特性。</p>
+            </div>
+            <div class="card">
+                <h2>混合语法</h2>
+                <p>创新的语法设计，融合多种编程范式，语法简洁直观。</p>
+            </div>
+            <div class="card">
+                <h2>跨平台支持</h2>
+                <p>支持 Termux、Linux、Windows、macOS 等多种平台。</p>
+            </div>
+            <div class="card">
+                <h2>AI 辅助开发</h2>
+                <p>内置 AI 开发助手，智能代码生成和错误诊断。</p>
+            </div>
+        </section>
+
+        <!-- 代码示例 -->
+        <section class="example-section">
+            <h2>示例代码</h2>
+            <div class="code-block">
+                <pre><code>#main {
+    print "Hello, DccX!"
+    
+    # Shell 命令
+    shell "ls -la"
+    
+    # 变量声明
+    var x = 10
+    
+    # 条件判断
+    if x > 5 {
+        print "x is greater than 5"
+    }
+    
+    # 循环
+    for i in range(0, 10) {
+        print i
+    }
+}</code></pre>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">首页</a>
+            <a href="documentation.html">文档</a>
+            <a href="examples.html">示例</a>
+            <a href="download.html">下载</a>
+            <a href="help.html">帮助</a>
+        </div>
+        <div class="copyright">
+            © 2024 DccX 项目团队。开源许可证 MIT License。
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('功能即将上线！');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

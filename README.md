@@ -52,8 +52,8 @@ Works on Termux, Linux, Windows, and macOS.
 ```bash
 pkg update
 pkg install git gcc make
-git clone https://github.com/dvlo/DccX
-cd DccX
+git clone https://github.com/DvloAsia/dccx.github.io
+cd dccx.github.io
 make
 ./dccx examples/test.dvx
 ```
@@ -62,8 +62,8 @@ make
 ```bash
 sudo apt update
 sudo apt install git gcc make
-git clone https://github.com/dvlo/DccX
-cd DccX
+git clone https://github.com/DvloAsia/dccx.github.io
+cd dccx.github.io
 make
 sudo make install
 ```
@@ -121,18 +121,18 @@ Download pre-built binaries or use MinGW to compile from source.
 
 ## Documentation
 
-Complete documentation available at: https://dvlo.github.io/DccX/
+Complete documentation available at: https://dvloasia.github.io/DccX/
 
 ### Quick Links
-- [Installation Guide](https://dvlo.github.io/DccX/#install)
-- [Basic Syntax](https://dvlo.github.io/DccX/#basic)
-- [Variables and Types](https://dvlo.github.io/DccX/#variables)
-- [Functions](https://dvlo.github.io/DccX/#functions)
-- [Control Structures](https://dvlo.github.io/DccX/#control)
-- [Shell Integration](https://dvlo.github.io/DccX/#shell)
-- [Memory Management](https://dvlo.github.io/DccX/#memory)
-- [Object-Oriented Programming](https://dvlo.github.io/DccX/#oop)
-- [AI Development Assistant](https://dvlo.github.io/DccX/#ai)
+- [Installation Guide](https://dvloasia.github.io/DccX/#install)
+- [Basic Syntax](https://dvloasia.github.io/DccX/#basic)
+- [Variables and Types](https://dvloasia.github.io/DccX/#variables)
+- [Functions](https://dvloasia.github.io/DccX/#functions)
+- [Control Structures](https://dvloasia.github.io/DccX/#control)
+- [Shell Integration](https://dvloasia.github.io/DccX/#shell)
+- [Memory Management](https://dvloasia.github.io/DccX/#memory)
+- [Object-Oriented Programming](https://dvloasia.github.io/DccX/#oop)
+- [AI Development Assistant](https://dvloasia.github.io/DccX/#ai)
 
 ## Development Tools
 
@@ -223,9 +223,32 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Enhanced by Shell's practicality
 - Powered by modern AI technology
 
-## Star History
+## How to Upload to GitHub
 
-[![Star History Chart](https://api.star-history.com/svg?repos=dvlo/DccX&type=Date)](https://star-history.com/#dvlo/DccX&Date)
+### Step 1: Create GitHub Repository
+1. Visit https://github.com
+2. Create new repository: `dccx.github.io`
+3. Don't initialize with README
+
+### Step 2: Upload Files
+```bash
+# Clone this project or use the provided files
+# Add to your repository
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/DvloAsia/dccx.github.io.git
+git push -u origin main
+```
+
+### Step 3: Enable GitHub Pages
+1. Go to repository Settings
+2. Select Pages
+3. Choose "GitHub Actions"
+4. Wait for deployment
+
+### Website URL
+https://dvloasia.github.io/DccX/
 
 ---
 **DccX** - The future of programming language. Combining Shell, C, and C++ in one powerful language.

@@ -52,7 +52,7 @@ Works on Termux, Linux, Windows, and macOS.
 ```bash
 pkg update
 pkg install git gcc make
-git clone https://github.com/DvloAsia/dccx.github.io
+git clone https://github.com/DvloAsia/DccX
 cd dccx.github.io
 make
 ./dccx examples/test.dvx
@@ -62,7 +62,7 @@ make
 ```bash
 sudo apt update
 sudo apt install git gcc make
-git clone https://github.com/DvloAsia/dccx.github.io
+git clone https://github.com/DvloAsia/DccX
 cd dccx.github.io
 make
 sudo make install
@@ -121,18 +121,18 @@ Download pre-built binaries or use MinGW to compile from source.
 
 ## Documentation
 
-Complete documentation available at: https://dvloasia.github.io/DccX/
+Complete documentation available at: https://dvloasia.github.io/DccXWeb/
 
 ### Quick Links
-- [Installation Guide](https://dvloasia.github.io/DccX/#install)
-- [Basic Syntax](https://dvloasia.github.io/DccX/#basic)
-- [Variables and Types](https://dvloasia.github.io/DccX/#variables)
-- [Functions](https://dvloasia.github.io/DccX/#functions)
-- [Control Structures](https://dvloasia.github.io/DccX/#control)
-- [Shell Integration](https://dvloasia.github.io/DccX/#shell)
-- [Memory Management](https://dvloasia.github.io/DccX/#memory)
-- [Object-Oriented Programming](https://dvloasia.github.io/DccX/#oop)
-- [AI Development Assistant](https://dvloasia.github.io/DccX/#ai)
+- [Installation Guide](https://dvloasia.github.io/DccXWeb/#install)
+- [Basic Syntax](https://dvloasia.github.io/DccXWeb/#basic)
+- [Variables and Types](https://dvloasia.github.io/DccXWeb/#variables)
+- [Functions](https://dvloasia.github.io/DccXWeb/#functions)
+- [Control Structures](https://dvloasia.github.io/DccXWeb/#control)
+- [Shell Integration](https://dvloasia.github.io/DccXWeb/#shell)
+- [Memory Management](https://dvloasia.github.io/DccXWeb/#memory)
+- [Object-Oriented Programming](https://dvloasia.github.io/DccXWeb/#oop)
+- [AI Development Assistant](https://dvloasia.github.io/DccXWeb/#ai)
 
 ## Development Tools
 
@@ -237,7 +237,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/DvloAsia/dccx.github.io.git
+git remote add origin https://github.com/DvloAsia/DccX.git
 git push -u origin main
 ```
 
@@ -248,7 +248,7 @@ git push -u origin main
 4. Wait for deployment
 
 ### Website URL
-https://dvloasia.github.io/DccX/
+https://dvloasia.github.io/DccXWeb/
 
 ---
 **DccX** - The future of programming language. Combining Shell, C, and C++ in one powerful language.

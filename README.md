@@ -1,17 +1,25 @@
 # DccX Programming Language
 
+<div align="center">
+
+**DccX** 是一个革命性的编程语言，它将 Shell 脚本的便利性、C 语言的强大性能和 C++ 的高级特性融合在一起。专为现代开发设计，DccX 使系统编程、自动化脚本和快速开发变得更加容易。
+
 **DccX** is a revolutionary programming language that combines the convenience of Shell scripting with the power of C and the advanced features of C++. Designed for modern development, DccX makes system programming, automation, and rapid development accessible to everyone.
 
-## Features
+</div>
 
-### Shell Integration
+## 🌟 特性 / Features
+
+### Shell 命令集成 / Shell Integration
+直接在代码中执行系统命令：
 Execute shell commands directly within your code:
 ```dvx
 shell "ls -la"
 var output = exec("date")
 ```
 
-### C Language Performance
+### C 语言性能 / C Language Performance
+底层系统编程能力：
 Low-level system programming capabilities:
 ```dvx
 var buffer = malloc(1024)
@@ -19,7 +27,8 @@ memcpy(buffer, "data", 4)
 free(buffer)
 ```
 
-### C++ Object-Oriented Features
+### C++ 面向对象特性 / C++ Object-Oriented Features
+现代编程范式：
 Modern programming paradigms:
 ```dvx
 class Person {
@@ -37,23 +46,25 @@ class Person {
 }
 ```
 
-### AI-Assisted Development
+### AI 辅助开发 / AI-Assisted Development
+智能代码分析和建议：
 Smart code analysis and suggestions:
 ```dvx
 # AI will analyze your code and provide optimization suggestions
 ```
 
-### Cross-Platform Support
+### 跨平台支持 / Cross-Platform Support
+支持 Termux、Linux、Windows 和 macOS。
 Works on Termux, Linux, Windows, and macOS.
 
-## Installation
+## 📦 安装指南 / Installation
 
 ### Termux (Android)
 ```bash
 pkg update
 pkg install git gcc make
 git clone https://github.com/DvloAsia/DccX
-cd dccx.github.io
+cd DccX
 make
 ./dccx examples/test.dvx
 ```
@@ -63,17 +74,18 @@ make
 sudo apt update
 sudo apt install git gcc make
 git clone https://github.com/DvloAsia/DccX
-cd dccx.github.io
+cd DccX
 make
 sudo make install
 ```
 
 ### Windows
+下载预编译二进制文件，或使用 MinGW 编译源代码。
 Download pre-built binaries or use MinGW to compile from source.
 
-## Quick Start
+## 🚀 快速开始 / Quick Start
 
-### Basic Program
+### 基础程序 / Basic Program
 ```dvx
 #main {
     print "Hello, DccX!"
@@ -96,7 +108,7 @@ Download pre-built binaries or use MinGW to compile from source.
 }
 ```
 
-### Advanced Example
+### 高级示例 / Advanced Example
 ```dvx
 #main {
     import sys
@@ -119,136 +131,142 @@ Download pre-built binaries or use MinGW to compile from source.
 }
 ```
 
-## Documentation
+## 📚 文档系统 / Documentation
 
-Complete documentation available at: https://dvloasia.github.io/DccXWeb/
+<div align="center">
 
-### Quick Links
-- [Installation Guide](https://dvloasia.github.io/DccXWeb/#install)
-- [Basic Syntax](https://dvloasia.github.io/DccXWeb/#basic)
-- [Variables and Types](https://dvloasia.github.io/DccXWeb/#variables)
-- [Functions](https://dvloasia.github.io/DccXWeb/#functions)
-- [Control Structures](https://dvloasia.github.io/DccXWeb/#control)
-- [Shell Integration](https://dvloasia.github.io/DccXWeb/#shell)
-- [Memory Management](https://dvloasia.github.io/DccXWeb/#memory)
-- [Object-Oriented Programming](https://dvloasia.github.io/DccXWeb/#oop)
-- [AI Development Assistant](https://dvloasia.github.io/DccXWeb/#ai)
+**双语网站：https://dvloasia.github.io/DccXWeb/**
 
-## Development Tools
+**Chinese**: https://dvloasia.github.io/DccXWeb/zh/
+**English**: https://dvloasia.github.io/DccXWeb/en/
 
-### Compiler
+</div>
+
+### 快速链接 / Quick Links
+- [安装指南](https://dvloasia.github.io/DccXWeb/#install) / [Installation Guide](https://dvloasia.github.io/DccXWeb/#install)
+- [基础语法](https://dvloasia.github.io/DccXWeb/#basic) / [Basic Syntax](https://dvloasia.github.io/DccXWeb/#basic)
+- [变量和类型](https://dvloasia.github.io/DccXWeb/#variables) / [Variables and Types](https://dvloasia.github.io/DccXWeb/#variables)
+- [函数定义](https://dvloasia.github.io/DccXWeb/#functions) / [Functions](https://dvloasia.github.io/DccXWeb/#functions)
+- [控制结构](https://dvloasia.github.io/DccXWeb/#control) / [Control Structures](https://dvloasia.github.io/DccXWeb/#control)
+- [Shell 集成](https://dvloasia.github.io/DccXWeb/#shell) / [Shell Integration](https://dvloasia.github.io/DccXWeb/#shell)
+- [内存管理](https://dvloasia.github.io/DccXWeb/#memory) / [Memory Management](https://dvloasia.github.io/DccXWeb/#memory)
+- [面向对象编程](https://dvloasia.github.io/DccXWeb/#oop) / [Object-Oriented Programming](https://dvloasia.github.io/DccXWeb/#oop)
+- [AI 开发助手](https://dvloasia.github.io/DccXWeb/#ai) / [AI Development Assistant](https://dvloasia.github.io/DccXWeb/#ai)
+
+## 🔧 开发工具 / Development Tools
+
+### 编译器 / Compiler
 ```bash
 dccx -c source.dvx -o output.exe
 ```
 
-### Interpreter
+### 解释器 / Interpreter
 ```bash
 dccx source.dvx
 ```
 
-### AI Assistant
+### AI 助手 / AI Assistant
 ```bash
 dccx -ai source.dvx
 ```
 
-### Debugger
+### 调试器 / Debugger
 ```bash
 dccx -d source.dvx
 ```
 
-## Roadmap
+## 📈 发展路线 / Roadmap
 
-### MVP (Minimum Viable Product)
-- Basic interpreter
-- Shell command execution
-- Simple syntax support
+### MVP (最小可用产品 / Minimum Viable Product)
+- 基础解释器 / Basic interpreter
+- Shell 命令执行 / Shell command execution
+- 简单语法支持 / Simple syntax support
 
-### Alpha Version
-- Complete lexer and parser
-- Basic compiler
-- AI code analysis
-- Documentation website
+### Alpha 版本 / Alpha Version
+- 完整的词法分析器和解析器 / Complete lexer and parser
+- 基础编译器 / Basic compiler
+- AI 代码分析 / AI code analysis
+- 文档网站 / Documentation website
 
-### Beta Version
-- Advanced features
-- Performance optimization
-- IDE integration
-- Community building
+### Beta 版本 / Beta Version
+- 高级特性 / Advanced features
+- 性能优化 / Performance optimization
+- IDE 集成 / IDE integration
+- 社区建设 / Community building
 
 ### Release 1.0
-- Full language features
-- Production-ready performance
-- Comprehensive documentation
-- Active community
+- 完整语言特性 / Full language features
+- 生产级性能 / Production-ready performance
+- 全面文档 / Comprehensive documentation
+- 活跃社区 / Active community
 
-## Contributing
+## 🤝 贡献指南 / Contributing
+
+<div align="center">
+
+我们欢迎贡献！请在提交前阅读我们的 [贡献指南](CONTRIBUTING.md)。
 
 We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting.
 
-### How to Contribute
-1. Fork the repository
-2. Create a feature branch
-3. Write clean, documented code
-4. Submit a pull request
+</div>
 
-### Development Guidelines
-- Follow existing coding conventions
-- Write tests for new features
-- Update documentation
-- Keep code clean and modular
+### 如何贡献 / How to Contribute
+1. Fork 仓库 / Fork the repository
+2. 创建特性分支 / Create a feature branch
+3. 编写清晰、有文档的代码 / Write clean, documented code
+4. 提交 Pull Request / Submit a pull request
 
-## Community
+### 开发指南 / Development Guidelines
+- 遵循现有的编码约定 / Follow existing coding conventions
+- 为新增功能编写测试 / Write tests for new features
+- 更新文档 / Update documentation
+- 保持代码干净模块化 / Keep code clean and modular
+
+## 🌐 社区 / Community
+
+<div align="center">
+
+加入我们的社区讨论想法、获取帮助并分享您的项目：
 
 Join our community to discuss ideas, get help, and share your projects:
 
+</div>
+
 ### GitHub
-- Issues: Report bugs and suggest features
-- Discussions: General discussions
-- Projects: Project planning and tracking
+- Issues: 报告问题和提出建议 / Report bugs and suggest features
+- Discussions: 一般讨论 / General discussions
+- Projects: 项目计划和跟踪 / Project planning and tracking
 
 ### Discord
+加入我们的 Discord 服务器进行实时聊天和获取支持。
 Join our Discord server for real-time chat and support.
 
-### Social Media
+### 社交媒体 / Social Media
+关注我们的 Twitter 获取更新和公告。
 Follow us on Twitter for updates and announcements.
 
-## License
+## 📄 许可证 / License
+
+<div align="center">
+
+本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件。
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+</div>
 
-- Inspired by Python's simplicity
-- Built on C's performance
-- Enhanced by Shell's practicality
-- Powered by modern AI technology
+## 🙏 致谢 / Acknowledgments
 
-## How to Upload to GitHub
-
-### Step 1: Create GitHub Repository
-1. Visit https://github.com
-2. Create new repository: `dccx.github.io`
-3. Don't initialize with README
-
-### Step 2: Upload Files
-```bash
-# Clone this project or use the provided files
-# Add to your repository
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/DvloAsia/DccX.git
-git push -u origin main
-```
-
-### Step 3: Enable GitHub Pages
-1. Go to repository Settings
-2. Select Pages
-3. Choose "GitHub Actions"
-4. Wait for deployment
-
-### Website URL
-https://dvloasia.github.io/DccXWeb/
+- 灵感源于 Python 的简洁性 / Inspired by Python's simplicity
+- 基于 C 语言的性能 / Built on C's performance
+- 增强于 Shell 的实用性 / Enhanced by Shell's practicality
+- 由现代 AI 技术驱动 / Powered by modern AI technology
 
 ---
+<div align="center">
+
+**DccX** - 编程语言的未来。在一个强大的语言中融合 Shell、C 和 C++。
+
 **DccX** - The future of programming language. Combining Shell, C, and C++ in one powerful language.
+
+</div>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载 DccX</title>
+    <style>
+        /* 与主页相同的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        /* 导航栏 */
+        .navbar {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00adb5;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #00adb5;
+        }
+        
+        .nav-links a.active {
+            color: #00adb5;
+            border-bottom: 2px solid #00adb5;
+        }
+        
+        /* 内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* 下载选项 */
+        .download-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .download-platforms {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .platform {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            min-width: 250px;
+            transition: transform 0.3s;
+        }
+        
+        .platform:hover {
+            transform: scale(1.05);
+        }
+        
+        .platform h3 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+        
+        .platform .version {
+            color: #00adb5;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background-color: #00adb5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background-color: #00969d;
+        }
+        
+        /* 代码区域 */
+        .code-block {
+            background-color: #16213e;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">DccX</div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="documentation.html">文档</a>
+            <a href="#" class="active">下载</a>
+            <a href="#">社区</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- 标题 -->
+        <h1 style="text-align: center; color: #1a1a2e; margin-bottom: 2rem;">下载 DccX</h1>
+        
+        <!-- Termux 下载 -->
+        <div class="download-section">
+            <h2>Termux (Android)</h2>
+            <p>DccX 专门为 Termux 优化，提供完整的开发环境。</p>
+            
+            <div class="download-platforms">
+                <div class="platform">
+                    <h3>最新版本</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>完整的功能支持</p>
+                    <a href="#" class="btn">下载源码</a>
+                </div>
+                <div class="platform">
+                    <h3>预编译版本</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>无需编译，直接安装</p>
+                    <a href="#" class="btn">下载二进制文件</a>
+                </div>
+            </div>
+            
+            <h3>安装指南</h3>
+            <div class="code-block">
+pkg update
+pkg install git gcc make
+git clone https://github.com/dvloasia/dccx.github.io
+cd dccx.github.io
+make
+./dccx examples/test.dvx</div>
+        </div>
+        
+        <!-- Linux 下载 -->
+        <div class="download-section">
+            <h2>Linux</h2>
+            <p>支持 Ubuntu、Debian、Fedora 等主流 Linux 发行版。</p>
+            
+            <div class="download-platforms">
+                <div class="platform">
+                    <h3>Ubuntu/Debian</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>.deb 包安装</p>
+                    <a href="#" class="btn">下载 deb</a>
+                </div>
+                <div class="platform">
+                    <h3>Fedora/CentOS</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>.rpm 包安装</p>
+                    <a href="#" class="btn">下载 rpm</a>
+                </div>
+                <div class="platform">
+                    <h3>源代码</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>编译安装</p>
+                    <a href="#" class="btn">下载源码</a>
+                </div>
+            </div>
+            
+            <h3>安装指南</h3>
+            <div class="code-block">
+sudo apt update
+sudo apt install git gcc make
+git clone https://github.com/dvloasia/dccx.github.io
+cd dccx.github.io
+make
+sudo make install</div>
+        </div>
+        
+        <!-- Windows 下载 -->
+        <div class="download-section">
+            <h2>Windows</h2>
+            <p>支持 Windows 10/11，包含预编译版本和源码。</p>
+            
+            <div class="download-platforms">
+                <div class="platform">
+                    <h3>预编译版本</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>无需编译，直接运行</p>
+                    <a href="#" class="btn">下载 EXE</a>
+                </div>
+                <div class="platform">
+                    <h3>源码编译</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>需要 MinGW</p>
+                    <a href="#" class="btn">下载源码</a>
+                </div>
+            </div>
+            
+            <h3>安装指南</h3>
+            <div class="code-block">
+# Windows 安装步骤
+# 1. 下载并安装 MinGW
+# 2. 克隆源代码
+git clone https://github.com/dvloasia/dccx.github.io
+# 3. 编译
+mingw32-make
+# 4. 运行
+./dccx.exe examples/test.dvx</div>
+        </div>
+        
+        <!-- macOS 下载 -->
+        <div class="download-section">
+            <h2>macOS</h2>
+            <p>支持 macOS 10.15+，支持 Intel 和 Apple Silicon。</p>
+            
+            <div class="download-platforms">
+                <div class="platform">
+                    <h3>Intel 版本</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>x64 架构</p>
+                    <a href="#" class="btn">下载 Intel</a>
+                </div>
+                <div class="platform">
+                    <h3>Apple Silicon</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>ARM 架构</p>
+                    <a href="#" class="btn">下载 ARM</a>
+                </div>
+                <div class="platform">
+                    <h3>源代码</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>编译安装</p>
+                    <a href="#" class="btn">下载源码</a>
+                </52c8+>
+                </div>
+            </div>
+            
+            <h3>安装指南</h3>
+            <div class="code-block">
+brew update
+brew install git gcc make
+git clone https://github.com/dvloasia/dccx.github.io
+cd dccx.github.io
+make
+./dccx examples/test.dvx</div>
+        </div>
+        
+        <!-- 开发工具下载 -->
+        <div class="download-section">
+            <h2>开发工具</h2>
+            <p>IDE 插件、调试工具、扩展模块。</p>
+            
+            <div class="download-platforms">
+                <div class="platform">
+                    <h3>IDE 插件</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>VS Code、JetBrains 插件</p>
+                    <a href="#" class="btn">下载插件</a>
+                </div>
+                <div class="platform">
+                    <h3>调试工具</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>调试器、性能分析器</p>
+                    <a href="#" class="btn">下载工具</a>
+                </div>
+                <div class="platform">
+                    <h3>扩展模块</h3>
+                    <div class="version">v0.1.0</div>
+                    <p>AI助手、格式化工具</p>
+                    <a href="#" class="btn">下载扩展</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div style="margin-bottom: 1rem;">
+            <a href="index.html">首页</a>
+            <a href="documentation.html">文档</a>
+            <a href="download.html">下载</a>
+            <a href="#">社区</a>
+        </div>
+        <div class="copyright">
+            © 2024 DccX 项目团队。开源许可证 MIT License。
+        </div>
+    </footer>
+    
+    <script>
+        // 页面交互
+        document.addEventListener('DOMContentLoaded', function() {
+            // 下载按钮事件
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 获取平台名称
+                    const platform = this.closest('.platform').querySelector('h3').textContent;
+                    
+                    // 模拟下载
+                    alert(`下载 ${platform} 版本 DccX v0.1.0\n\n下载链接将在正式发布后提供`);
+                    
+                    // 模拟下载进度
+                    const progress = document.createElement('div');
+                    progress.style.position = 'fixed';
+                    progress.style.top = '50%';
+                    progress.style.left = '50%';
+                    progress.style.transform = 'translate(-50%, -50%)';
+                    progress.style.backgroundColor = '#00adb5';
+                    progress.style.color = 'white';
+                    progress.style.padding = '1rem';
+                    progress.style.borderRadius = '5px';
+                    progress.style.zIndex = '1000';
+                    progress.textContent = '准备下载...';
+                    
+                    document.body.appendChild(progress);
+                    
+                    // 移除进度条
+                    setTimeout(() => {
+                        progress.remove();
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

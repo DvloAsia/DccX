@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DccX 示例</title>
+    <style>
+        /* 与主页相同的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        /* 导航栏 */
+        .navbar {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00adb5;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #00adb5;
+        }
+        
+        .nav-links a.active {
+            color: #00adb5;
+            border-bottom: 2px solid #00adb5;
+        }
+        
+        /* 内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* 示例区域 */
+        .example-section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-section h2 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+        
+        .example-section h3 {
+            color: #00adb5;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 代码区块 */
+        .code-container {
+            background-color: #16213e;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+        
+        .code {
+            font-family: 'Courier New', monospace;
+            color: #e6e6e6;
+        }
+        
+        .keyword {
+            color: #00adb5;
+        }
+        
+        .comment {
+            color: #888;
+        }
+        
+        .function {
+            color: #ff7b72;
+        }
+        
+        .string {
+            color: #a5ff90;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: &a9; solid #00adb5;
+        }
+        
+        /* 内容区域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* 示例区域 */
+        .example-section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-section h2 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+        
+        .example-section h3 {
+            color: #00adb5;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 代码区块 */
+        .code-container {
+            background-color: #16213e;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+        
+        .code {
+            font-family: 'Courier New', monospace;
+            color: #e6e6e6;
+        }
+        
+        .keyword {
+            color: #00adb5;
+        }
+        
+        .comment {
+            color: #888;
+        }
+        
+        .function {
+            color: #ff7b72;
+        }
+        
+        .string {
+            color: #a5ff90;
+        }
+        
+        /* 页脚 */
+        .footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        /* 示例分类 */
+        .example-categories {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-btn {
+            padding: 0.5rem 1rem;
+            background-color: #f5f5f5;
+            color: #1a1a2e;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .category-btn.active {
+            background-color: #00adb5;
+            color: white;
+        }
+        
+        .category-btn:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">DccX</div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="documentation.html">文档</a>
+            <a href="download.html">下载</a>
+            <a href="#" class="active">示例</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- 标题 -->
+        <h1 style="text-align: center; color: #1a1a2e; margin-bottom: 2rem;">DccX 示例</h1>
+        
+        <!-- 分类 -->
+        <div class="example-categories">
+            <button class="category-btn active" onclick="showCategory('basic')">基础</button>
+            <button class="category-btn" onclick="showCategory('shell')">Shell</button>
+            <button class="category-btn" onclick="showCategory('memory')">内存管理</button>
+            <button class="category-btn" onclick="showCategory('oop')">面向对象</button>
+            <button class="category-btn" onclick="showCategory('ai')">AI助手</button>
+        </div>
+        
+        <!-- 基础示例 -->
+        <div class="example-section" id="basic-examples">
+            <h2>基础示例</h2>
+            
+            <h3>Hello World</h3>
+            <div class="code-container">
+                <div class="code"><span class="comment"># Hello World</span>
+<span class="keyword">func</span> <span class="function">main</span>() {
+    print <span class="string">"Hello, DccX!"</span>
+}</div>
+            </div>
+            
+            <h3>变量和类型</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 变量声明</span>
+    var name = <span class="string">"DccX"</span>
+    var version = 0.1
+    var features = [<span class="string">"Shell"</span>, <span class="string">"C"</span>, <span class="string">"C++"</span>]
+    
+    <span class="comment"># 类型推断</span>
+    var x = 10          <span class="comment"># 数字类型</span>
+    var message = <span class="string">"Hello"</span>   <span class="comment"># 字符串类型</span>
+    var flag = true    <span class="comment"># 布尔类型</span>
+    
+    <span class="comment"># 输出</span>
+    print <span class="string">"Name: " + name</span>
+    print <span class="string">"Version: " + version</span>
+}</div>
+            </div>
+            
+            <h3>条件语句</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    var temperature = 25
+    
+    if temperature > 30 {
+        print <span class="string">"太热了!"</span>
+    } elseif temperature > 20 {
+        print <span class="string">"舒适的温度"</span>
+    } else {
+        print <span class="string">"有点冷"</span>
+    }
+}</div>
+            </div>
+            
+            <h3>循环结构</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># for 循环</span>
+    for i in range(0, 5) {
+        print <span class="string">"数字: "</span> + i
+    }
+    
+    <span class="comment"># while 循环</span>
+    var count = 0
+    while count < 3 {
+        print <span class="string">"计数: "</span> + count
+        count = count + 1
+    }
+}</div>
+            </div>
+        </div>
+        
+        <!-- Shell 示例 -->
+        <div class="example-section" id="shell-examples">
+            <h2>Shell 集成示例</h2>
+            
+            <h3>基本 Shell 命令</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 执行 Shell 命令</span>
+    shell <span class="string">"ls -la"</span>
+    
+    <span class="comment"># 获取命令输出</span>
+    var files = exec(<span class="string">"ls *.dvx"</span>)
+    print <span class="string">"文件列表: " + files</span>
+    
+    <span class="comment"># 管道操作</span>
+    var count = exec(<span class="string">"ls *.dvx | wc -l"</span>)
+    print <span class="string">"文件数量: " + count</span>
+}</div>
+            </div>
+            
+            <h3>文件操作</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 创建目录</span>
+    shell <span class="string">"mkdir test_dir"</span>
+    
+    <span class="comment"># 创建文件</span>
+    shell <span class="string">"echo 'Hello DccX' > test.txt"</span>
+    
+    <span class="comment"># 读取文件</span>
+    var content = exec(<span class="string">"cat test.txt"</span>)
+    print <span class="string">"文件内容: " + content</span>
+    
+    <span class="comment"># 删除文件</span>
+    shell <span class="string">"rm test.txt"</span>
+}</div>
+            </div>
+            
+            <h3>系统信息</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 获取系统信息</span>
+    var date = exec(<span class="string">"date"</span>)
+    var memory = exec(<span class="string">"free -h"</span>)
+    var cpu = exec(<span class="string">"uptime"</span>)
+    
+    print <span class="string">"当前时间: " + date</span>
+    print <span class="string">"内存使用: " + memory</span>
+    print <span class="string">"CPU 负载: " + cpu</span>
+}</div>
+            </div>
+        </div>
+        
+        <!-- 内存管理示例 -->
+        <div class="example-section" id="memory-examples">
+            <h2>内存管理示例</h2>
+            
+            <h3>基础内存操作</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 内存分配</span>
+    var buffer = malloc(1024)  <span class="comment"># 分配 1024 字节</span>
+    
+    <span class="comment"># 数据写入</span>
+    memcpy(buffer, <span class="string">"Hello DccX"</span>, 10)
+    
+    <span class="comment"># 读取数据</span>
+    var data = buffer.read(10)
+    print <span class="string">"数据: " + data</span>
+    
+    <span class="comment"># 释放内存</span>
+    free(buffer)
+}</div>
+            </div>
+            
+            <h3>高级内存管理</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 批量内存分配</span>
+    var buffers = []
+    for i = 0; i < 10; i++ {
+        var buffer = malloc(1024)
+        buffers.append(buffer)
+        
+        <span class="comment"># 数据填充</span>
+        memcpy(buffer, <span class="string">"Buffer " + i</span>, 8)
+    }
+    
+    <span class="comment"># 批量释放</span>
+    for buffer in buffers {
+        free(buffer)
+    }
+}</div>
+            </div>
+        </div>
+        
+        <!-- 面向对象示例 -->
+        <div class="example-section" id="oop-examples">
+            <h2>面向对象编程示例</h2>
+            
+            <h3>基本类定义</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">class</span> Person {
+    var name
+    var age
+    
+    init(name, age) {
+        this.name = name
+        this.age = age
+    }
+    
+    func greet() {
+        return <span class="string">"Hello, I'm "</span> + this.name
+    }
+    
+    func get_age() {
+        return this.age
+    }
+}
+
+<span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 创建对象</span>
+    var person = Person(<span class="string">"John"</span>, 25)
+    
+    <span class="comment"># 调用方法</span>
+    print person.greet()
+    print <span class="string">"Age: "</span> + person.get_age()
+}</div>
+            </div>
+            
+            <h3>继承</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">class</span> Animal {
+    var name
+    var species
+    
+    init(name, species) {
+        this.name = name
+        this.species = species
+    }
+    
+    func speak() {
+        return <span class="string">"..."</span>
+    }
+}
+
+<span class="keyword">class</span> Dog extends Animal {
+    func speak() {
+        return <span class="string">"Woof!"</span>
+    }
+}
+
+<span class="keyword">class</span> Cat extends Animal {
+    func speak() {
+        return <span class="string">"Meow!"</span>
+    }
+}
+
+<span class="keyword">func</span> <span class="function">main</span>() {
+    var dog = Dog(<span class="string">"Buddy"</span>, <span class="string">"Dog"</span>)
+    var cat = Cat(<span class="string">"Kitty"</span>, <span class="string">"Cat"</span>)
+    
+    print dog.speak()
+    print cat.speak()
+}</div>
+            </div>
+        </div>
+        
+        <!-- AI 助手示例 -->
+        <div class="example-section" id="ai-examples">
+            <h2>AI 助手示例</h2>
+            
+            <h3>代码分析</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 使用 AI 分析代码</span>
+    var code = <span class="string">"""
+    # 示例代码
+    func example() {
+        var x = 10
+        var y = 20
+        
+        # 重复的 print 语句
+        print "x = " + x
+        print "y = " + y
+        
+        # 连续的 Shell 命令
+        shell "ls -la"
+        shell "grep dvx"
+        
+        # 内存分配优化
+        var buffer1 = malloc(100)
+        var buffer2 = malloc(100)
+        memcpy(buffer1, buffer2, 100)
+        free(buffer1)
+        free(buffer2)
+    }
+    """</span>
+    
+    <span class="comment"># AI 分析</span>
+    var suggestions = ai_analyze(code)
+    
+    for suggestion in suggestions {
+        print <span class="string">"建议: "</span> + suggestion
+    }
+}</div>
+            </div>
+            
+            <h3>代码优化</h3>
+            <div class="code-container">
+                <div class="code"><span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># AI 代码优化示例</span>
+    
+    <span class="comment"># 原始代码</span>
+    var original_code = <span class="string">"""
+    for i = 0; i < 100; i++ {
+        shell "ls -la"
+        shell "grep dvx"
+    }
+    """</span>
+    
+    <span class="comment"># AI 优化建议</span>
+    var optimized_code = ai_optimize(original_code)
+    
+    print <span class="string">"原始代码:"</span>
+    print original_code
+    
+    print <span class="string">"优化建议:"</span>
+    print optimized_code
+}</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div style="margin-bottom: 1rem;">
+            <a href="index.html">首页</a>
+            <a href="documentation.html">文档</a>
+            <a href="download.html">下载</a>
+            <a href="#">示例</a>
+        </div>
+        <div class="copyright">
+            © 2024 DccX 项目团队。开源许可证 MIT License。
+        </div>
+    </footer>
+    
+    <script>
+        // 示例分类切换
+        function showCategory(category) {
+            // 重置所有按钮状态
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 设置当前按钮为激活状态
+            document.querySelector('.category-btn[onclick="showCategory(\'' + category + '\')"]').classList.add('active');
+            
+            // 隐藏所有示例区域
+            document.querySelectorAll('.example-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // 显示目标示例区域
+            document.getElementById(category + '-examples').style.display = 'block';
+        }
+        
+        // 初始化显示基础示例
+        document.addEventListener('DOMContentLoaded', function() {
+            showCategory('basic');
+        });
+    </script>
+</body>
+</html>

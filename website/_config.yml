@@ -1,0 +1,34 @@
+# DccX GitHub Pages 配置
+title: DccX Programming Language
+description: The revolutionary programming language that combines Shell, C, and C++
+url: "https://dvloasia.github.io/dccx.github.io"
+baseurl: "/dccx.github.io"
+
+# 页面配置
+theme: minimal
+permalink: pretty
+
+# 导航配置
+navigation:
+  main:
+    - title: Home
+      url: /
+    - title: Documentation
+      url: /documentation.html
+    - title: Examples
+      url: /examples.html
+    - title: Download
+      url: /download.html
+    - title: Community
+      url: /community.html
+
+# SEO
+seo:
+  title: DccX Programming Language
+  description: A revolutionary programming language combining Shell, C, and C++
+  keywords: programming language, shell, c, c++, compiler, ai assistant, development
+
+# 社交媒体
+social:
+  github: dvloasia/dccx.github.io
+  twitter: DccXLanguage

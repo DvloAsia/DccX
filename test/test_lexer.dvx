@@ -1,0 +1,53 @@
+# DccX 词法分析器测试
+
+# 测试基本语法
+func test_lexer() {
+    # 变量声明
+    var x = 10
+    var y = "hello"
+    
+    # 条件判断
+    if x > 5 {
+        print "x is greater than 5"
+    } else {
+        print "x is less than 5"
+    }
+    
+    # 循环测试
+    for i in range(0, 5) {
+        print i
+    }
+    
+    # Shell 命令
+    shell "ls -la"
+    shell "echo Hello DccX"
+    
+    # 系统调用
+    sys("mkdir test_dir")
+    sys("rm test_dir")
+    
+    # 复杂运算
+    var result = (x * 2) + (y.length() * 3)
+    print "Result: " + result
+    
+    # 函数调用
+    var result2 = calculate(x, y)
+    print "Result2: " + result2
+    
+    # 内存操作（C 风格）
+    var buffer = malloc(1024)
+    memcpy(buffer, "test", 4)
+    free(buffer)
+}
+
+func calculate(a, b) {
+    return a + b.length()
+}
+
+#main {
+    # 运行测试
+    test_lexer()
+    
+    # 测试结果
+    print "Lexer test completed"
+}

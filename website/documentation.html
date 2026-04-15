@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DccX 文档系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: #1a1a2e;
+            color: white;
+            padding: 2rem;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+        
+        .sidebar h2 {
+            color: #00adb5;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar ul {
+            list-style-type: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            display: block;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        
+        .sidebar a:hover {
+            background-color: #00adb5;
+        }
+        
+        .sidebar a.active {
+            background-color: #00adb5;
+        }
+        
+        .content {
+            margin-left: 250px;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+        
+        .doc-section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .doc-section h2 {
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+        
+        .doc-section h3 {
+            color: #00adb5;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background-color: #16213e;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+        
+        .nav-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1rem 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .nav-top .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00adb5;
+        }
+        
+        .nav-top a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        
+        .code {
+            font-family: 'Courier New', monospace;
+            color: #e6e6e6;
+        }
+        
+        .keyword {
+            color: #00adb5;
+        }
+        
+        .comment {
+            color: #888;
+        }
+        
+        .function {
+            color: #ff7b72;
+        }
+        
+        .string {
+            color: #a5ff90;
+        }
+        
+        .search-bar {
+            background-color: white;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .footer {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-top">
+        <div class="logo">DccX 文档</div>
+        <div>
+            <a href="index.html">首页</a>
+            <a href="documentation.html">文档</a>
+            <a href="examples.html">示例</a>
+            <a href="download.html">下载</a>
+        </div>
+    </div>
+    
+    <div class="sidebar">
+        <h2>文档目录</h2>
+        <ul>
+            <li><a href="#install" class="active">安装指南</a></li>
+            <li><a href="#quickstart">快速开始</a></li>
+            <li><a href="#basic">基本语法</a></li>
+            <li><a href="#variables">变量和类型</a></li>
+            <li><a href="#functions">函数定义</a></li>
+            <li><a href="#control">控制结构</a></li>
+            <li><a href="#shell">Shell 集成</a></li>
+            <li><a href="#memory">内存管理</a></li>
+            <li><a href="#oop">面向对象</a></li>
+            <li><a href="#modules">模块系统</a></li>
+            <li><a href="#error">错误处理</a></li>
+            <li><a href="#advanced">高级特性</a></li>
+            <li><a href="#tools">开发工具</a></li>
+            <li><a href="#faq">常见问题</a></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div class="search-bar">
+            <input type="text" placeholder="搜索文档...">
+        </div>
+        
+        <div class="doc-section" id="install">
+            <h2>安装指南</h2>
+            <h3>Termux 安装</h3>
+            <div class="code-block">
+                <div class="code">pkg update
+pkg install git gcc make
+git clone https://github.com/dvlo/DccX
+cd DccX
+make
+./dccx examples/test.dvx</div>
+            </div>
+            
+            <h3>Linux 安装</h3>
+            <div class="code-block">
+                <div class="code">sudo apt update
+sudo apt install git gcc make
+git clone https://github.com/dvlo/DccX
+cd DccX
+make
+sudo make install</div>
+            </div>
+            
+            <h3>Windows 安装</h3>
+            <p>Windows 用户需要安装 MinGW 环境或使用预编译的二进制文件。</p>
+        </div>
+        
+        <div class="doc-section" id="quickstart">
+            <h2>快速开始</h2>
+            <h3>第一个 DccX 程序</h3>
+            <div class="code-block">
+                <div class="code"><span class="comment"># 第一个 DccX 程序</span>
+<span class="keyword">func</span> <span class="function">main</span>() {
+    <span class="comment"># 打印 Hello World</span>
+    print <span class="string">"Hello, DccX!"</span>
+    
+    <span class="comment"># 执行 Shell 命令</span>
+    shell <span class="string">"ls -la"</span>
+    
+    <span class="comment"># 变量声明</span>
+    name = <span class="string">"Dvlo"</span>
+    age = 25
+    
+    <span class="comment"># 条件判断</span>
+    if age > 18 {
+        print <span class="string">"成年人"</span>
+    }
+}</div>
+            </div>
+            
+            <h3>运行程序</h3>
+            <div class="code-block">
+                <div class="code">dccx program.dvx</div>
+            </div>
+            
+            <h3>编译程序</h3>
+            <div class="code-block">
+                <div class="code">dccx -c program.dvx -o program.exe</div>
+            </div>
+        </div>
+        
+        <div class="doc-section" id="basic">
+            <h2>基本语法</h2>
+            <p>DccX 语法融合了多种编程语言的特性。</p>
+            
+            <h3>注释</h3>
+            <div class="code-block">
+                <div class="code"><span class="comment"># 这是单行注释（Shell 风格）</span>
+<span class="comment">// 这也是单行注释（C 风格）</span>
+<span class="comment">/* 
+   这是多行注释
+ */</span></div>
+            </div>
+            
+            <h3>语句分隔符</h3>
+            <p>每条语句以换行结束，不需要额外的分隔符。</p>
+            
+            <h3>代码块</h3>
+            <div class="code-block">
+                <div class="code">if condition {
+    <span class="comment"># 代码块使用大括号</span>
+    print <span class="string">"条件成立"</span>
+}</div>
+            </div>
+        </div>
+        
+        <div class="doc-section" id="variables">
+            <h2>变量和类型</h2>
+            
+            <h3>变量声明</h3>
+            <div class="code-block">
+                <div class="code"><span class="comment"># 类型声明</span>
+num x = 10               <span class="comment"># 数字类型</span>
+str text = <span class="string">"Hello"</span>     <span class="comment"># 字符串类型</span>
+bool flag = true         <span class="comment"># 布尔类型</span>
+
+<span class="comment"># 类型推断</span>
+var y = 20               <span class="comment"># 自动推断为数字</span>
+var message = <span class="string">"World"</span>   <span class="comment"># 自动推断为字符串</span></div>
+            </div>
+            
+            <h3>数据类型</h3>
+            <table style="width: 100%; margin: 1rem 0;">
+                <tr>
+                    <th>类型</th>
+                    <th>描述</th>
+                    <th>示例</th>
+                </tr>
+                <tr>
+                    <td><strong>num</strong></td>
+                    <td>数字（整数/浮点数）</td>
+                    <td>num x = 10.5</td>
+                </tr>
+                <tr>
+                    <td><strong>str</strong></td>
+                    <td>字符串</081616+td>
+                    <td>str s = "Hello"</td>
+                </tr>
+                <tr>
+                    <td><strong>bool</strong></td>
+                    <td>布尔值</td>
+                    <td>bool b = true</td>
+                </tr>
+                <tr>
+                    <td><strong>list</strong></td>
+                    <td>列表/数组</td>
+                    <td>list arr = [1, 2, 3]</td>
+                </tr>
+                <tr>
+                    <td><strong>dict</strong></td>
+                    <td>字典/哈希表</td>
+                    <td>dict m = {"key": "value"}</td>
+                </tr>
+                <tr>
+                    <td><strong>func</strong></td>
+                    <td>函数引用</td>
+                    <td>func f = add</td>
+                </tr>
+                <tr>
+                    <td><strong>file</strong></td>
+                    <td>文件对象</td>
+                    <td>file f = open("file.txt")</td>
+                </tr>
+                <tr>
+                    <td><strong>proc</strong></td>
+                    <td>进程对象</td>
+                    <td>proc p = spawn("ls")</td>
+                </3ffdc2+></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="doc-section" id="functions">
+            <h2>函数定义</h2>
+            
+            <h3>基本函数</h3>
+            <div class="code-block">
+                <div class="code"><span class="keyword">func</span> <span class="function">add</span>(a, b) {
+    return a + b
+}
+
+<span class="keyword">func</span> <span class="function">greet</span>(name: str): str {
+    return <span class="string">"Hello, "</span> + name
+}</div>
+            </div>
+            
+            <h3>匿名函数</h3>
+            <div class="code-block">
+                <div class="code">var square = <span class="keyword">func</span>(x) {
+    return x * x
+}
+
+<span class="comment"># Lambda 表达式</span>
+var sum = (a, b) => a + b</div>
+            </div>
+            
+            <h3>默认参数</h3>
+            <div class="code-block">
+                <div class="code"><span class="keyword">func</span> <span class="function">multiply</span>(a, b = 1) {
+    return a * b
+}</div>
+            </div>
+            
+            <h3>高阶函数</h3>
+            <div class="code-block">
+                <div class="code"><span class="keyword">func</span> <span class="function">map</span>(func, list) {
+    result = []
+    for item in list {
+        result.append(func(item))
+    }
+    return result
+}
+
+<span class="comment"># 使用高阶函数</span>
+numbers = [1, 2, 3, 4]
+squared = map(square, numbers)</div>
+            </div>
+        </div>
+        
+        <div class="doc-section" id="control">
+            <h2>控制结构</h2>
+            
+            <h3>条件语句</h3>
+            <div class="code-block">
+                <div class="code">if condition {
+    <span class="comment"># 代码块</span>
+} elseif condition {
+    <span class="comment"># 代码块</span>
+} else {
+    <span class="comment"># 代码块</span>
+}</div>
+            </div>
+            
+            <h3>循环结构</h3>
+            <div class="code-block">
+                <div class="code"><span class="comment"># for 循环</span>
+for i in range(0, 10) {
+    print i
+}
+
+<span class="comment"># C 风格 for 循环</span>
+for i = 0; i < 10; i++ {
+    print i
+}
+
+<span class="comment"># while 循环</span>
+while condition {
+    <span class="comment"># 循环体</span>
+}
+
+<span class="comment"># Shell 风格循环</span>
+for file in $(ls *.dvx) {
+    print <span class="string">"File: "</span> + file
+}</div>
+            </div>
+            
+            <h3>Switch 语句</h3>
+            <div class="code-block">
+                <div class="code">switch value {
+    case 1:
+        print <span class="string">"One"</span>
+    case 2:
+        print <span class="string">"Two"</span>
+    default:
+        print <span class="string">"Other"</span>
+}</div>
+            </div>
+        </div>
+        
+        <!-- 更多文档内容 -->
+    </div>
+    
+    <div class="footer">
+        © 2024 DccX 文档系统 | 开源许可证 MIT License
+    </div>
+</body>
+</html>

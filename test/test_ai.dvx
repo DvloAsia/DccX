@@ -1,0 +1,148 @@
+# DccX AI 辅助测试
+
+#main {
+    # AI 辅助功能测试
+    
+    # 复杂代码示例
+    func complex_function() {
+        # Shell 命令执行
+        var files = exec("ls *.dvx")
+        
+        # 循环处理文件
+        for file in files.split("\n") {
+            if file != "" {
+                var size = exec("stat -c%s " + file)
+                
+                # 分类处理
+                if size.to_num() > 1000 {
+                    sys("mkdir large_files")
+                    sys("mv " + file + " large_files/")
+                    print "Moved large file: " + file
+                } else if size.to_num() < 100 {
+                    sys("mkdir small_files")
+                    sys("mv " + file + " small_files/")
+                    print "Moved small file: " + file
+                } else {
+                    print "File: " + file + " size: " + size
+                }
+            }
+        }
+        
+        # 内存管理示例
+        var buffer_size = 1024 * 1024
+        var buffer = malloc(buffer_size)
+        
+        if buffer != null {
+            # 数据操作
+            for i = 0; i < buffer_size; i++ {
+                buffer[i] = i % 256
+            }
+            
+            # 数据处理
+            var sum = 0
+            for i = 0; i < 1000; i++ {
+                sum += buffer[i]
+            }
+            
+            print "Sum: " + sum
+            
+            # 释放内存
+            free(buffer)
+        }
+        
+        # 面向对象示例
+        class FileProcessor {
+            var directory
+            
+            init(directory) {
+                this.directory = directory
+            }
+            
+            func process_files() {
+                var files = exec("ls " + this.directory)
+                var results = []
+                
+                for file in files.split("\n") {
+                    if file != "" {
+                        var file_info = {
+                            name: file,
+                            size: exec("stat -c%s " + this.directory + "/" + file),
+                            time: exec("stat -c%Y " + this.directory + "/" + file)
+                        }
+                        results.append(file_info)
+                    }
+                }
+                
+                return results
+            }
+            
+            func summarize() {
+                var results = this.process_files()
+                var total_size = 0
+                var file_count = results.length()
+                
+                for info in results {
+                    total_size += info["size"].to_num()
+                }
+                
+                var avg_size = total_size / file_count
+                return {
+                    total_files: file_count,
+                    total_size: total_size,
+                    avg_size: avg_size
+                }
+            }
+        }
+        
+        # 使用类
+        var processor = FileProcessor(".")
+        var summary = processor.summarize()
+        
+        print "File count: " + summary["total_files"]
+        print "Total size: " + summary["total_size"]
+        print "Avg size: " + summary["avg_size"]
+    }
+    
+    # 调用复杂函数
+    complex_function()
+    
+    # 混合编程示例
+    var code = """
+    # AI 优化示例
+    var x = 10
+    var y = 20
+    
+    # 多次 print 可以合并
+    print "x = " + x
+    print "y = " + y
+    
+    # Shell 命令可以管道连接
+    shell "ls -la"
+    shell "grep dvx"
+    
+    # 内存管理优化
+    var buffer1 = malloc(100)
+    var buffer2 = malloc(100)
+    memcpy(buffer1, buffer2, 100)
+    free(buffer1)
+    free(buffer2)
+    """
+    
+    # AI 分析代码
+    print "AI analysis of code:"
+    
+    # 这里可以调用 AI 助手进行分析
+    # 省略实际 AI 调用
+    
+    # 代码改进建议
+    var suggestions = [
+        "合并 print 语句",
+        "使用管道连接 shell 命令",
+        "优化内存分配",
+        "考虑使用单次 malloc"
+    ]
+    
+    for suggestion in suggestions {
+        print "Suggestion: " + suggestion
+    }
+}

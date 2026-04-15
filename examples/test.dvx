@@ -1,0 +1,11 @@
+# DccX 测试脚本
+# 这是一个简单的测试文件
+
+print Hello DccX World!
+
+shell ls -la
+
+int count = 5
+print count
+
+shell echo "This is from shell"
